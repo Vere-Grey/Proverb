@@ -8,13 +8,13 @@ public static class Proverb
     private static IEnumerable<string> ReciteStream(IEnumerable<string> subjects)
     {
         var firstSubject = "";
+        if (subjects.Any())
+        {
+            firstSubject = subjects.First();
+        }
+
         while (subjects.Any())
         {
-            if (firstSubject == "")
-            {
-                firstSubject = subjects.First();
-            }
-
             var currentSubjects = subjects.Take(2).ToArray();
             switch (currentSubjects.Count())
             {
@@ -23,8 +23,6 @@ public static class Proverb
                     break;
                 case 1:
                     yield return $"And all for the want of a {firstSubject}.";
-                    break;
-                case 0:
                     yield break;
             }
 
