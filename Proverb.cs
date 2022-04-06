@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -10,7 +8,7 @@ public static class Proverb
     private static IEnumerable<string> ReciteStream(IEnumerable<string> subjects)
     {
         var firstSubject = "";
-        while(subjects.Any())
+        while (subjects.Any())
         {
             if (firstSubject == "")
             {
@@ -28,9 +26,9 @@ public static class Proverb
                     break;
                 case 0:
                     yield break;
-            } 
+            }
+
             subjects = subjects.Skip(1);
         }
-        
     }
 }
